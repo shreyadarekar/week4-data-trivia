@@ -30,46 +30,7 @@ Note: You can solve this in multiple ways. Try using a few advanced array
 methods. Can you use helper methods to separate out the logic?
 */
 
-//!! START
-function temperatureRange(climateData) {
-  let tempRangeData = climateData.map( (cityData) => {
-    let { id, city, country, monthlyAvg } = cityData
-
-    return {
-      "id": id,
-      "city": city,
-      "country": country,
-      "monthlyTemperatureRange": getTempDataArray(monthlyAvg)
-    }
-  })
-
-  return tempRangeData
-};
-
-function getTempDataArray(monthlyAvg) {
-  let tempDataArray = monthlyAvg.map( (monthData, index) => {
-    let { high, low } = monthData
-
-    return {
-      "month": getMonthFromIndex(index),
-      "high": high,
-      "low": low,
-      "range": high - low
-    }
-  });
-
-  return tempDataArray;
-}
-
-function getMonthFromIndex(index) {
-  const months = [ "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"];
-
-  return months[index];
-}
-
-// console.log(temperatureRange(climateData));
-//!! END
+// Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

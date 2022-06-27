@@ -20,38 +20,7 @@ Hint: How can you identify and access the correct data for a month such as
 "March"?
 */
 
-//!! START
-function leastRainfall(climateData, month) {
-    // key for linking months to indices in the monthlyAvg array
-    //Could also be done with an object (lookup dictionary)
-    const months = [ "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
-
-    // convert month argument to index
-    const monthIndex = months.indexOf(month);
-
-    // initialize variable to define least rainfall threshold
-    const rainfallThreshold = 10
-
-    let leastRainfallArray = [];
-
-    // iterate through cities, checking for month's rainfall value
-    climateData.forEach( (cityData) => {
-        let rainfall = cityData.monthlyAvg[monthIndex].rainfall
-
-        // compare rainfall to threshold
-        if (rainfall < rainfallThreshold) {
-            // format string and push into results array if it meets criteria
-            cityData = cityData.city + ", " + cityData.country + ": " + parseInt(rainfall) + " mm"
-            leastRainfallArray.push(cityData);
-        }
-    })
-
-    return leastRainfallArray;
-}
-
-// console.log(leastRainfall(climateData, "August"));
-//!! END
+// Your code here
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

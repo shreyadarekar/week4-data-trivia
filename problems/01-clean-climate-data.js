@@ -11,18 +11,7 @@ For example, it should return:
 [ "Amsterdam, Netherlands", "Athens, Greece", ...plus 103 more cities ]
 */
 
-//!! START
-function listAllCitiesWithCountries(climateData) {
-    let cityCountryArray = [];
-    for (let item of climateData) {
-        let cityCountryString = item.city + ", " + item.country;
-        cityCountryArray.push(cityCountryString);
-    }
-    return cityCountryArray;
-}
-
-// console.log(listAllCitiesWithCountries(climateData));
-//!! END
+// Your code here
 
 
 /* 02. `listAllUsCities`
@@ -35,15 +24,7 @@ For example, it should return:
 [ 'Atlanta GA, United States', 'Austin TX, United States', ...plus more cities ]
 */
 
-//!! START
-function listAllUsCities(climateData) {
-    let cityCountryArray = listAllCitiesWithCountries(climateData);
-    let filteredArray = cityCountryArray.filter(city => city.includes('United States'));
-    return filteredArray;
-}
-
-// console.log(listAllUsCities(climateData));
-//!! END
+// Your code here
 
 
 
@@ -57,21 +38,7 @@ was duplicated in id 3, 7, and 9, the returned object should look like:
 { 'Athens: [ 2 ], 'Mexico City': [ 3, 7, 9 ] }
 */
 
-//!! START
-function findDuplicates(climateData) {
-    let cityObj = {};
-    for (let item of climateData) {
-        if (item.city in cityObj) {
-            cityObj[item.city].push(item.id)
-        } else {
-            cityObj[item.city] = [item.id]
-        }
-    }
-    return cityObj;
-}
-
-// console.log(findDuplicates(climateData));
-//!! END
+// Your code here
 
 
 /* 04. `returnDuplicate` Which city object should be corrected in
@@ -87,23 +54,7 @@ HINT: Use documentation to research the `find()` method in JavaScript. You may,
 but do not have to, use this method to solve this problem.
 */
 
-//!! START
-function returnDuplicate(climateData) {
-    let duplicated = {};
-    let cityObj = findDuplicates(climateData);
-    for (let city in cityObj) {
-        if (cityObj[city].length > 1) {
-            let lastEntryId = cityObj[city][cityObj[city].length - 1]
-            duplicated = climateData.find(item => item.id === lastEntryId);
-        }
-    }
-    return duplicated;
-    // if using filter, return duplicated[0]. find returns one item,
-    // filter returns array
-}
-
-// console.log(returnDuplicate(climateData));
-//!! END
+// Your code here
 
 /* 05. `correctDuplicate` Correct the city name of the duplicated city.
 
@@ -117,15 +68,7 @@ with id of 5 to 'Nice' and then return that object with the corrected city name.
 HINT: Can you use functions you have already written to help solve this problem?
 */
 
-//!! START
-function correctDuplicate(climateData, newCityName) {
-    let duplicated = returnDuplicate(climateData);
-    duplicated.city = newCityName
-    return climateData.find(item => item.city === newCityName)
-}
-
-// console.log(correctDuplicate(climateData, "Peoria IL"));
-//!! END
+// Your code here
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
