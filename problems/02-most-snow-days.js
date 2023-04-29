@@ -19,7 +19,7 @@ Note: You can solve this in multiple ways. Try using a few advanced array
 methods!
 */
 
-// Your code here
+// Your code heremoc
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

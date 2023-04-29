@@ -53,11 +53,26 @@ object including every city name, pointing to an array of IDs for that city.
 
 For example, if `Athens` showed up only once with an id of 2, and 'Mexico City'
 was duplicated in id 3, 7, and 9, the returned object should look like:
-{ 'Athens: [ 2 ], 'Mexico City': [ 3, 7, 9 ] }
+{ 'Athens': [ 2 ], 'Mexico City': [ 3, 7, 9 ] }
 */
 
 // Your code here
-const findDuplicates = () => {};
+const findDuplicates = () => {
+  let res = {};
+  climateData.forEach(obj => {
+    const cityVar = obj.city;
+    const idVar = obj.id;
+    if (res[cityVar] === undefined) {
+      res[cityVar] = [idVar]
+    }
+    else {
+      res[cityVar].push(idVar)
+    }
+  })
+  return res
+};
+
+findDuplicates()
 
 /* 04. `returnDuplicate` Which city object should be corrected in
 the data set?
@@ -73,8 +88,21 @@ but do not have to, use this method to solve this problem.
 */
 
 // Your code here
-const returnDuplicate = () => {};
+const returnDuplicate = () => {
+  let cityIds = findDuplicates();
+  // console.log(cityIds)
+  for (let city in cityIds) {
+    let cityId = cityIds[city]
+    // console.log(cityId)
+    if (cityId.length > 1) {
+      let dupeId = (cityId[cityId.length - 1])
+      return climateData.find((obj) => (obj.id === dupeId))
+    }
+  }
+ 
+};
 
+returnDuplicate()
 /* 05. `correctDuplicate` Correct the city name of the duplicated city.
 
 Write a function, `correctDuplicate` that finds the ONE duplicated city,
