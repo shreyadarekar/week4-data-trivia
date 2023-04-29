@@ -1,5 +1,5 @@
 /**************DO NOT MODIFY THIS LINE BELOW*****************/
-const climateData = require('../climate-data')
+const climateData = require("../climate-data");
 
 /* 01. `listAllCitiesWithCountries`
 What are all of the cities included in the data set?
@@ -12,7 +12,14 @@ For example, it should return:
 */
 
 // Your code here
-
+const listAllCitiesWithCountries = (obj) => {
+  return climateData.map((obj) => {
+    let location = obj.city;
+    let place = obj.country;
+    return location + ", " + place;
+  });
+};
+listAllCitiesWithCountries(climateData);
 
 /* 02. `listAllUsCities`
 What are all of the United States cities included in the data set?
@@ -25,8 +32,19 @@ For example, it should return:
 */
 
 // Your code here
-
-
+const listAllUsCities = () => {
+  let mappedData = climateData.map((obj) => {
+    let location = obj.city;
+    let place = obj.country;
+    let destination = location + ", " + place;
+    return destination;
+  });
+  let filteredData = mappedData.filter((ele) => {
+    return ele.includes("United States");
+  });
+  return filteredData;
+};
+listAllUsCities();
 
 /* 03. `findDuplicates` What cities are included more than once in the data?
 
@@ -39,7 +57,7 @@ was duplicated in id 3, 7, and 9, the returned object should look like:
 */
 
 // Your code here
-
+const findDuplicates = () => {};
 
 /* 04. `returnDuplicate` Which city object should be corrected in
 the data set?
@@ -55,6 +73,7 @@ but do not have to, use this method to solve this problem.
 */
 
 // Your code here
+const returnDuplicate = () => {};
 
 /* 05. `correctDuplicate` Correct the city name of the duplicated city.
 
@@ -69,9 +88,14 @@ HINT: Can you use functions you have already written to help solve this problem?
 */
 
 // Your code here
-
+const correctDuplicate = () => {};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
-module.exports = [ listAllCitiesWithCountries, listAllUsCities, findDuplicates,
-    returnDuplicate, correctDuplicate ];
+module.exports = [
+  listAllCitiesWithCountries,
+  listAllUsCities,
+  findDuplicates,
+  returnDuplicate,
+  correctDuplicate,
+];
